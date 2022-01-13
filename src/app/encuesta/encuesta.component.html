@@ -1,0 +1,39 @@
+<div class="container custom-container-2">
+      <h3 class="mb-3 text-center">Formulario Encuesta</h3>
+      
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Número documento</th>
+              <th scope="col">Email</th>
+              <th scope="col">Comentario</th>
+              <th scope="col">Marca PC</th>
+              <th scope="col">Acción</th>   
+            </tr>
+          </thead>
+          <tbody>
+
+            <td>
+              <input type="number" [(ngModel)]="documento" class="form-control" placeholder="Número documento" required>
+            </td>
+            <td>
+              <input type="email" [(ngModel)]="email" class="form-control" placeholder="Email" required>
+            </td>
+            <td>
+              <input type="text" [(ngModel)]="comentario" class="form-control" placeholder="Comentario" required>
+            </td>
+            <td>
+              <select [(ngModel)]="idMarca">
+                <option  *ngFor="let marca of Marcas"  [ngValue]="marca.idMarcaPc" >{{marca.marca}}</option>
+              </select>
+              
+            </td>
+            <td>
+              <span class="btn btn-success btn-lg btn-block" (click)="agregarEncuesta(documento, email, comentario, idMarca)">Agregar</span>
+            </td>
+          </tbody>
+        </table>
+      </div>
+  
+  </div>

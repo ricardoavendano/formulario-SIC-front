@@ -1,0 +1,38 @@
+<div class="container custom-container-2">
+
+    <div class="no-data text-center" *ngIf="EncuestaDTO.length == 0">
+        <p>No hay encuestas diligenciadas</p>
+        <button class="btn btn-outline-primary" routerLink="/encuesta">Crear encuesta</button>
+    </div>
+
+    <div *ngIf="EncuestaDTO.length !== 0">
+      <h3 class="mb-3 text-center">Encuestas diligenciadas</h3>
+      
+      <div class="col-md-12">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Número documento</th>
+              <th scope="col">Email</th>
+              <th scope="col">Comentario</th>   
+              <th scope="col">Marca Pc</th>   
+              <th scope="col">Acción</th>   
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let encuesta of EncuestaDTO">
+              <td>{{encuesta.documento}}</td>
+              <td>{{encuesta.email}}</td>
+              <td>{{encuesta.comentario}}</td>
+              <td>{{encuesta.idMarcaPcpk.marca}}</td>             
+              <td>
+                  <span class="btn btn-danger btn-lg btn-block" (click)="eliminarEncuesta(encuesta.idEncuesta)">Eliminar</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+  
+    </div>
+  
+  </div>

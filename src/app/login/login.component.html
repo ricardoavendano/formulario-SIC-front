@@ -1,0 +1,29 @@
+<div class="container">
+    <div>
+      Usuario: <input type="text" name="idUsuario" [(ngModel)]="loginDetails.idUsuario">
+      Contraseña : <input type="password" name="password" [(ngModel)]="loginDetails.password">
+    </div>
+    <button (click)=checkLogin() class="btn btn-success">
+      Ingreso
+    </button>
+    <br>
+    <br>
+    <div>
+      <button (click)=createUser() class="btn btn-warning">
+        Crear nuevo usuario 
+      </button>
+    </div>
+
+  <div *ngIf="isNewUser">
+    <br>
+    <br>
+    <div>
+      Nuevo Usuario : <input type="text" name="idUsuario" [(ngModel)]="loginDetails.idUsuario">
+      Nueva Contraseña : <input type="password" name="password" [(ngModel)]="loginDetails.password">
+    </div>
+    <button (click)=create() class="btn btn-success">
+      Crear
+    </button>
+  </div>
+    
+  </div>
